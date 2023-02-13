@@ -45,6 +45,13 @@ input.onGesture(Gesture.Shake, function () {
         `)
     music.playMelody("C5 C5 C5 C5 C5 C5 C5 C5 ", 225)
 })
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    if (Hunger >= 5) {
+        basic.showString("Full!")
+    } else {
+        Hunger += 1
+    }
+})
 basic.forever(function () {
     if (Hunger == 0) {
         for (let index = 0; index < 4; index++) {
